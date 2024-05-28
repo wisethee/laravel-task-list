@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static findOrFail($id)
  * @method static latest()
+ * @property string title
+ * @property string description
+ * @property string long_description
  */
 class Task extends Model
 {
