@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static findOrFail($id)
+ * @method static latest()
  */
 class Task extends Model
 {
