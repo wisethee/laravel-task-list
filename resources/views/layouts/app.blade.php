@@ -13,6 +13,9 @@
 </h1>
 
 <main>
+    @if (session()->has('success'))
+        <p>{{session()->get('success')}}</p>
+    @endif
     @yield('main')
 </main>
 </body>
