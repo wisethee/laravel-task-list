@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static findOrFail($id)
  * @method static latest()
+ * @property string id
  * @property string title
  * @property string description
  * @property string long_description
@@ -15,4 +16,6 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'description', 'long_description'];
 }
