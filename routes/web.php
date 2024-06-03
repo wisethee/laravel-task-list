@@ -32,6 +32,11 @@ Route::delete('/tasks/{task}', function (Task $task) {
         ->with('success', 'Task deleted successfully!');
 })->name('tasks.destroy');
 
+Route::put('/tasks/{task}/complete', function (Task $task) {
+    $task->complete();
+    return redirect()->back()->with('success', 'Task completed!');
+})->name('tasks.complete');
+
 Route::get('/tasks/{task}/edit', function (task $task) {
     return view('edit', [
         'task' => $task
