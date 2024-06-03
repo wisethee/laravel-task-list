@@ -3,16 +3,22 @@
 @section('title', 'Task List')
 
 @section('main')
-    <div>
-        <a href="{{route('tasks.create')}}">Create a new task</a>
-    </div>
-    @forelse($tasks as $task)
-        <a href="{{route('tasks.show', ['task' => $task->id])}}">{{ $task->title }}</a>
+    <nav class="mb-4">
+        <a href="{{ route('tasks.create') }}" class="link">Add Task!</a>
+    </nav>
+
+    @forelse ($tasks as $task)
+        <div>
+            <a href="{{ route('tasks.show', ['task' => $task->id]) }}"
+                @class(['line-through' => $task->completed])>{{ $task->title }}</a>
+        </div>
     @empty
-        <p>No tasks found</p>
+        <div>There are no tasks!</div>
     @endforelse
 
-    @if($tasks->count())
-        {{$tasks->links()}}
+    @if ($tasks->count())
+        <nav class="mt-4">
+            {{ $tasks->links() }}
+        </nav>
     @endif
 @endsection
