@@ -8,4 +8,8 @@
     @empty
         <p>No tasks found</p>
     @endforelse
+
+    @if($tasks->count())
+        {{$tasks->links()}}
+    @endif
 @endsection
